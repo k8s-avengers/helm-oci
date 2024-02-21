@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/mimir-distributed",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "2.1.0-beta.4",
+  "app_version": "2.0.0",
+  "description": "Grafana Mimir",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/mimir-distributed:2.1.0-beta.4"
+}

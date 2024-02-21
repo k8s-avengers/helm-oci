@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/promtail",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "0.7.3",
+  "app_version": "0.0.1",
+  "description": "Responsible for gathering logs and sending them to Loki",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/promtail:0.7.3"
+}

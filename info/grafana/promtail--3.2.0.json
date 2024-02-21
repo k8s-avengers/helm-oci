@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/promtail",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "3.2.0",
+  "app_version": "2.1.0",
+  "description": "Promtail is an agent which ships the contents of local logs to a Loki instance",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/promtail:3.2.0"
+}

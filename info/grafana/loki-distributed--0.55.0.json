@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/loki-distributed",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "0.55.0",
+  "app_version": "2.6.1",
+  "description": "Helm chart for Grafana Loki in microservices mode",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/loki-distributed:0.55.0"
+}
