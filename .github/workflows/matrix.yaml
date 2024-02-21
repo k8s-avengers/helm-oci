@@ -1,0 +1,86 @@
+name: matrix
+on:
+  # schedule:
+  #   - cron: '0 5 * * *' # every day at 5am UTC
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    permissions:
+      packages: write # to write to ghcr.io
+      contents: write # to commit to the repo (examples)
+    
+    runs-on: "ubuntu-latest" # ${{ matrix.arch.runner }}
+    strategy:
+      fail-fast: false # let other jobs try to complete if one fails
+      matrix:
+        include:
+          - { id: "cluster-api-operator", env: { HELM_SRC_REPO: "https://kubernetes-sigs.github.io/cluster-api-operator" } }
+          - { id: "ingress-nginx", env: { HELM_SRC_REPO: "https://kubernetes.github.io/ingress-nginx" } }
+          #- { id: "prometheus-community", env: { HELM_SRC_REPO: "https://prometheus-community.github.io/helm-charts" } }
+    env:
+      BASE_OCI_REF: "ghcr.io/${{ github.repository_owner }}/"
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    name: "${{ matrix.id }}"
+    
+    steps:
+
+      - name: Checkout build repo
+        uses: actions/checkout@v4
+
+      - name: Docker Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }} # GitHub username or org
+          password: ${{ secrets.GITHUB_TOKEN }}    # GitHub actions builtin token. repo has to have pkg access.
+
+      - name: setup python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          #cache: 'pip' # caching pip dependencies -- not useful, we're using venv
+      
+      # Setup Helm
+      - name: Setup latest Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: "latest"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: install pip deps
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+
+      - name: Obtain info and template examples ${{matrix.id}}
+        id: info
+        env: ${{ matrix.env }}
+        run: |
+          .venv/bin/python info/cli.py ${{ matrix.distro }}
+
+      - name: Commit changes to the examples directory
+        run: |
+          git config --global user.name "GHA workflow"
+          git config --global user.email "workflow@github.com"
+          git pull || true # repo might have changed since we started, avoid conflicts
+          git add info || true
+          git commit -m "Update info for ${{ matrix.id }}" || true
+          git push || true
+
+
+      - name: Actually process ${{matrix.id}}
+        id: magic
+        env: ${{ matrix.env }}
+        run: |
+          .venv/bin/python tooci/cli.py tooci
+
+  release:
+    needs: [ build ] # depend on the previous jobs...
+    if: "${{ !cancelled() }}" # ... but run even if (some of) them failed, but not if job was cancelled
+    runs-on: ubuntu-latest
+    steps:
+      - name: List current dir
+        run: |
+          ls -lahtR

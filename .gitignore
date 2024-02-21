@@ -1,0 +1,5 @@
+.idea
+*.json
+.venv
+tooci/__pycache__
+*.tgz
