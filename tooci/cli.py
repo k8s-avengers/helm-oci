@@ -1,4 +1,5 @@
 import concurrent.futures
+import json
 import logging
 import multiprocessing
 import sys
@@ -6,6 +7,7 @@ import sys
 import click
 from rich.pretty import pretty_repr
 
+import utils
 from helm import Inventory
 from utils import setup_logging
 
@@ -15,6 +17,13 @@ log: logging.Logger = setup_logging("cli")
 @click.group()
 def cli():
 	pass
+
+
+@cli.command(help="Produce GHA matrix from the inventory of repos")
+def gha_matrix():
+	repos = Inventory(None)
+	contents = [{"id": chart.repo_id} for chart in repos.charts.values()]
+	utils.set_gha_output("jsonmatrix", json.dumps(contents))
 
 
 @cli.command(help="Get all charts and all versions from a Helm repo and push them to an OCI registry")

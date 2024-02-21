@@ -5,21 +5,31 @@ on:
   workflow_dispatch:
 
 jobs:
-
+  
+  # Reads repos.yaml and generates a jsonmatrix of repos to process
+  matrix_prep:
+    name: "prepare job matrix"
+    runs-on: ubuntu-latest
+    steps:
+      - { name: "Checkout build repo", uses: "actions/checkout@v4" }
+      - { name: "setup python 3.11", uses: "actions/setup-python@v5", with: { python-version: "3.11" } }
+      - { name: "install pip deps", run: "python3 -m venv .venv && .venv/bin/pip install -r requirements.txt" }
+      - name: "Prepare"
+        id: prepare
+        run: |
+          .venv/bin/python tooci/cli.py gha-matrix
+    outputs: { jsonmatrix: "${{ steps.prepare.outputs.jsonmatrix }}" }
+  
   build:
     permissions:
       packages: write # to write to ghcr.io
       contents: write # to commit to the repo (examples)
-    
+    needs: [ "matrix_prep" ] # depend on the matrix_prep job to get the jsonmatrix
     runs-on: "ubuntu-latest" # ${{ matrix.arch.runner }}
     strategy:
       fail-fast: false # let other jobs try to complete if one fails
-      matrix: # @TODO: this is stupid, we should be able to use the repos.yaml directly; use a prepare job to generate the matrix from repos.yaml into a GHA output with JSON in it
-        include:
-          - { id: "kubernetes-sigs-cluster-api-operator" }
-          - { id: "kubernetes-ingress-nginx" }
-          - { id: "grafana" }
-          - { id: "prometheus-community" }
+      matrix:
+        include: ${{ fromJSON(needs.matrix_prep.outputs.jsonmatrix) }}
     env:
       BASE_OCI_REF: "ghcr.io/${{ github.repository }}"
       UPDATE_HELM: "yes"
@@ -27,8 +37,10 @@ jobs:
     
     steps:
 
-      - name: Checkout build repo
-        uses: actions/checkout@v4
+      - { name: "Checkout build repo", uses: "actions/checkout@v4" }
+      - { name: "setup python 3.11", uses: "actions/setup-python@v5", with: { python-version: "3.11" } }
+      - { name: "install pip deps", run: "python3 -m venv .venv && .venv/bin/pip install -r requirements.txt" }
+      - { name: "Setup Helm", uses: "azure/setup-helm@v4.0.0", with: { version: "3.14.1" } } # v4 only does not work?
 
       - name: Docker Login to GitHub Container Registry
         uses: docker/login-action@v3
@@ -37,43 +49,18 @@ jobs:
           username: ${{ github.repository_owner }} # GitHub username or org
           password: ${{ secrets.GITHUB_TOKEN }}    # GitHub actions builtin token. repo has to have pkg access.
 
-      - name: setup python 3.11
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-      
-      # Setup Helm
-      - name: Setup Helm
-        uses: azure/setup-helm@v4.0.0 # v4 only does not work?
-        with:
-          version: "3.14.1"
-
-      - name: install pip deps
-        run: |
-          python3 -m venv .venv
-          .venv/bin/pip install -r requirements.txt
-
-      - name: "Do it: ${{matrix.id}}"
+      - name: "Process ${{matrix.id}}"
         id: doit
         run: |
           git pull || true # install deps is slow; repo might have changed
           .venv/bin/python tooci/cli.py process --repo-id "${{ matrix.id }}"
 
-      - name: Commit changes to the info directory
+      - name: Commit changes to the info directory ${{matrix.id}}
         run: |
           git config --global user.name "GHA workflow"
           git config --global user.email "workflow@github.com"
           git pull || true # repo might have changed since we started, avoid conflicts
           git add info || true
           git commit -m "Update info for ${{ matrix.id }}" || true
-          git push || true
-
-
-  #release:
-  #  needs: [ build ] # depend on the previous jobs...
-  #  if: "${{ !cancelled() }}" # ... but run even if (some of) them failed, but not if job was cancelled
-  #  runs-on: ubuntu-latest
-  #  steps:
-  #    - name: List current dir
-  #      run: |
-  #        ls -lahtR
+          git push || { echo "Push failed, retrying"; sleep $((1 + $RANDOM % 10)); git pull --rebase; git push; }
+          git push || { echo "Push failed, retrying"; sleep $((1 + $RANDOM % 10)); git pull --rebase; git push; }
