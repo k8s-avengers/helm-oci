@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/synthetic-monitoring-agent",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "0.2.0",
+  "app_version": "v0.9.3-0-gcd7aadd",
+  "description": "Grafana's Synthetic Monitoring application. The agent provides probe functionality and executes network checks for monitoring remote targets.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/synthetic-monitoring-agent:0.2.0"
+}

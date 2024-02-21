@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/enterprise-logs-simple",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "1.3.0",
+  "app_version": "v1.4.0",
+  "description": "DEPRECATED Grafana Enterprise Logs (Simple Scalable)",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/enterprise-logs-simple:1.3.0"
+}

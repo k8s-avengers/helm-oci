@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/mimir-openshift-experimental",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "2.1.0",
+  "app_version": "2.0.0",
+  "description": "Grafana Mimir on OpenShift Experiment",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/mimir-openshift-experimental:2.1.0"
+}

@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/lgtm-distributed",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "1.0.1",
+  "app_version": "6.59.4",
+  "description": "Umbrella chart for a distributed Loki, Grafana, Tempo and Mimir stack",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/lgtm-distributed:1.0.1"
+}
