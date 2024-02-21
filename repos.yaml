@@ -3,16 +3,13 @@ repositories:
   
   "kubernetes-sigs-cluster-api-operator":
     source: "https://kubernetes-sigs.github.io/cluster-api-operator"
-    latest-only: true # only process the latest version of each chart in the repo; useful for large repos & during development
   
   "kubernetes-ingress-nginx":
     source: "https://kubernetes.github.io/ingress-nginx"
-    latest-only: true # only process the latest version of each chart in the repo; useful for large repos & during development
   
   "grafana":
     source: "https://grafana.github.io/helm-charts"
-    latest-only: true # only process the latest version of each chart in the repo; useful for large repos & during development
   
   "prometheus-community":
     source: "https://prometheus-community.github.io/helm-charts"
-    latest-only: true # only process the latest version of each chart in the repo; useful for large repos & during development
+    #latest-only: true # only process the latest version of each chart in the repo; useful for large repos & during development
