@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/loki",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "5.22.1",
+  "app_version": "2.9.1",
+  "description": "Helm chart for Grafana Loki in simple, scalable mode",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/loki:5.22.1"
+}

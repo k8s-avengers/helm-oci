@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/grafana",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "6.4.0",
+  "app_version": "7.4.0",
+  "description": "The leading tool for querying and visualizing time series and metrics.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/grafana:6.4.0"
+}

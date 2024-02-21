@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/loki",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "2.8.6",
+  "app_version": "v2.4.1",
+  "description": "Loki: like Prometheus, but for logs.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/loki:2.8.6"
+}
