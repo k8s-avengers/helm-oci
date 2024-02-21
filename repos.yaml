@@ -13,3 +13,8 @@ repositories:
   "prometheus-community":
     source: "https://prometheus-community.github.io/helm-charts"
     #latest-only: true # only process the latest version of each chart in the repo; useful for large repos & during development
+  
+  "truecharts":
+    source: "https://charts.truecharts.org"
+    only-charts: # only process these charts in the repo; useful for large repos with thousands of charts you don't want
+      - "hedgedoc"

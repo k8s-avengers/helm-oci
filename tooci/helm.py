@@ -155,23 +155,31 @@ class ChartRepo:
 	chart_all_versions: list[HelmChartVersion]
 	chart_latest_versions: list[HelmChartVersion]
 	latest_only: bool
+	only_charts: list[str] | None
 
 	def __init__(self, inventory: "Inventory", repo_id: str, repo_yaml: any):
 		self.inventory = inventory
 		self.repo_id = repo_id
 		self.helm_repo_id = f"tooci-{self.repo_id}"  # prefix it for clarity
 		self.source = repo_yaml["source"]
-		self.latest_only = bool(repo_yaml.get("latest-only", False))
 		self.source_url = urlparse(self.source)
 		self.charts = {}
 		self.chart_all_versions = []
 		self.chart_latest_versions = []
+
+		self.latest_only = bool(repo_yaml.get("latest-only", False))
+		self.only_charts = None
+		if "only-charts" in repo_yaml:
+			self.only_charts = [f"{self.helm_repo_id}/{chart}" for chart in repo_yaml["only-charts"]]
+
 		if not self.source_url.scheme:
 			raise Exception(f"Invalid URL: {self.source} for repo id {self.repo_id}")
 
 	def __rich_repr__(self):
 		yield "id", self.repo_id
 		yield "source", self.source
+		yield "latest_only", self.latest_only
+		yield "only_charts", self.only_charts
 		yield "inventory", self.inventory
 
 	def helm_update(self):
@@ -195,6 +203,10 @@ class ChartRepo:
 			chart_name_full = chart_json["name"]
 			if not chart_name_full.startswith(search_term):
 				log.debug(f"Skipping chart '{chart_name_full}' not in repo '{self.repo_id}'")
+				continue
+
+			if self.only_charts and chart_name_full not in self.only_charts:
+				log.debug(f"Skipping chart '{chart_name_full}' not in only-charts for repo '{self.repo_id}'")
 				continue
 
 			if chart_name_full not in charts_and_versions:
