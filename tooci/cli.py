@@ -65,6 +65,10 @@ def process(repo_id, base_oci_ref):
 		new_versions = len([x for x in results if x])
 		log.info(f"Finished processing {len(chart_versions)} chart versions; {new_versions} new versions were processed")
 
+		# Site a GitHub Actions "notice" output to stdout
+		print(f"\n::notice::{repo_id} processed  {new_versions} new chart versions.\n")
+
+
 	except:
 		log.exception("CLI failed")
 		sys.exit(1)
