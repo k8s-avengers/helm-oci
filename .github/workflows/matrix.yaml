@@ -18,10 +18,11 @@ jobs:
         include:
           - { id: "kubernetes-sigs-cluster-api-operator" }
           - { id: "kubernetes-ingress-nginx" }
-          #- { id: "grafana" }
-          #- { id: "prometheus-community" }
+          - { id: "grafana" }
+          - { id: "prometheus-community" }
     env:
-      BASE_OCI_REF: "ghcr.io/${{ github.repository_owner }}/helm-oci"
+      BASE_OCI_REF: "ghcr.io/${{ github.repository }}"
+      UPDATE_HELM: "yes"
     name: "${{ matrix.id }}"
     
     steps:
