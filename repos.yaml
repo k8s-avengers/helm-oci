@@ -7,12 +7,24 @@ repositories:
   "kubernetes-ingress-nginx":
     source: "https://kubernetes.github.io/ingress-nginx"
   
+  "kubernetes-dashboard":
+    source: "https://kubernetes.github.io/dashboard/"
+  
   "grafana":
     source: "https://grafana.github.io/helm-charts"
+  
+  "longhorn":
+    source: "https://charts.longhorn.io"
+      
+  "jetstack": # cert-manager et al
+    source: "https://charts.jetstack.io"
   
   "prometheus-community":
     source: "https://prometheus-community.github.io/helm-charts"
     #latest-only: true # only process the latest version of each chart in the repo; useful for large repos & during development
+  
+  "cilium":
+    source: "https://helm.cilium.io"
   
   "truecharts":
     source: "https://charts.truecharts.org"
