@@ -59,7 +59,8 @@ jobs:
         id: doit
         env: ${{ matrix.env }}
         run: |
-          .venv/bin/python tooci/cli.py tooci "${{ matrix.id }}"
+          git pull || true # install deps is slow; repo might have changed
+          .venv/bin/python process --repo-id "${{ matrix.id }}"
 
       - name: Commit changes to the info directory
         run: |
