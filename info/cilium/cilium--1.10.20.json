@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "cilium/cilium",
+  "chat.repo.source": "https://helm.cilium.io",
+  "version": "1.10.20",
+  "app_version": "1.10.20",
+  "description": "eBPF-based Networking, Security, and Observability",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/cilium",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/cilium/cilium:1.10.20"
+}

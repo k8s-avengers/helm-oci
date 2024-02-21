@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "cilium/tetragon",
+  "chat.repo.source": "https://helm.cilium.io",
+  "version": "1.0.0-rc.2",
+  "app_version": "1.0.0-rc.2",
+  "description": "Helm chart for Tetragon",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/cilium",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/cilium/tetragon:1.0.0-rc.2"
+}
