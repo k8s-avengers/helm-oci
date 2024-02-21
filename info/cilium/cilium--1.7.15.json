@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "cilium/cilium",
+  "chat.repo.source": "https://helm.cilium.io",
+  "version": "1.7.15",
+  "app_version": "1.7.15",
+  "description": "Helm chart for Cilium",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/cilium",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/cilium/cilium:1.7.15"
+}
