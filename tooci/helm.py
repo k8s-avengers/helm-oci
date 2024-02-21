@@ -33,8 +33,8 @@ class HelmChartVersion:
 		self.app_version = chart_json["app_version"]
 		self.description = chart_json["description"]
 
-		self.oci_target = f"{self.inv.base_oci_ref}/{self.repo.repo_id}/{self.chart.name_in_repo}"
-		self.oci_target_version = f"{self.oci_target}:{self.version}"
+		self.oci_target = f"{self.inv.base_oci_ref}/{self.repo.repo_id}"
+		self.oci_target_version = f"{self.oci_target}/{self.chart.name_in_repo}:{self.version}"
 
 		self.info_dir = f"{self.inv.base_path}/info/{self.repo.repo_id}"
 		self.info_file = f"{self.info_dir}/{self.chart.name_in_repo}--{self.version}.json"

@@ -18,11 +18,10 @@ jobs:
         include:
           - { id: "kubernetes-sigs-cluster-api-operator" }
           - { id: "kubernetes-ingress-nginx" }
-          - { id: "grafana" }
-          - { id: "prometheus-community" }
+          #- { id: "grafana" }
+          #- { id: "prometheus-community" }
     env:
-      BASE_OCI_REF: "ghcr.io/${{ github.repository_owner }}/"
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      BASE_OCI_REF: "ghcr.io/${{ github.repository_owner }}/helm-oci"
     name: "${{ matrix.id }}"
     
     steps:
@@ -41,14 +40,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-          #cache: 'pip' # caching pip dependencies -- not useful, we're using venv
       
       # Setup Helm
-      - name: Setup latest Helm
+      - name: Setup Helm
         uses: azure/setup-helm@v4.0.0 # v4 only does not work?
         with:
-          version: "latest"
-          #token: ${{ secrets.GITHUB_TOKEN }} # is already in the job's ENV
+          version: "3.13.3"
 
       - name: install pip deps
         run: |
