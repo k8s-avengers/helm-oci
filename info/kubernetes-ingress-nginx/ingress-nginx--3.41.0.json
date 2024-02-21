@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "kubernetes-ingress-nginx/ingress-nginx",
+  "chat.repo.source": "https://kubernetes.github.io/ingress-nginx",
+  "version": "3.41.0",
+  "app_version": "0.51.0",
+  "description": "Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/kubernetes-ingress-nginx",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/kubernetes-ingress-nginx/ingress-nginx:3.41.0"
+}
