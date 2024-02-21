@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "prometheus-community/prometheus-stackdriver-exporter",
+  "chat.repo.source": "https://prometheus-community.github.io/helm-charts",
+  "version": "2.2.0",
+  "app_version": "0.12.0",
+  "description": "Stackdriver exporter for Prometheus",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/prometheus-community",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/prometheus-community/prometheus-stackdriver-exporter:2.2.0"
+}

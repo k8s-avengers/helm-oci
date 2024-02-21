@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "prometheus-community/prometheus-operator-crds",
+  "chat.repo.source": "https://prometheus-community.github.io/helm-charts",
+  "version": "0.1.1",
+  "app_version": "0.61.1",
+  "description": "A Helm chart that collects custom resource definitions (CRDs) from the Prometheus Operator, allowing for seamless integration with GitOps tools ",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/prometheus-community",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/prometheus-community/prometheus-operator-crds:0.1.1"
+}
