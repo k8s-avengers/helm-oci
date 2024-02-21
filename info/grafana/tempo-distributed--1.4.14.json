@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/tempo-distributed",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "1.4.14",
+  "app_version": "2.1.1",
+  "description": "Grafana Tempo in MicroService mode",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/tempo-distributed:1.4.14"
+}
