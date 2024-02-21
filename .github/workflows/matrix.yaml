@@ -52,11 +52,13 @@ jobs:
 
       - name: "Process ${{matrix.id}}"
         id: doit
+        continue-on-error: true # let it progress so we can commit the info directory
         run: |
           git pull || true # install deps is slow; repo might have changed
           .venv/bin/python tooci/cli.py process --repo-id "${{ matrix.id }}"
 
       - name: Commit changes to the info directory ${{matrix.id}}
+        id: commit
         run: |
           git config --global user.name "GHA workflow"
           git config --global user.email "workflow@github.com"
@@ -65,3 +67,8 @@ jobs:
           git commit -m "Update info for ${{ matrix.id }}" || true
           git push || { echo "Push failed, retrying"; sleep $((1 + $RANDOM % 10)); git pull --rebase; git push; }
           git push || { echo "Push failed, retrying"; sleep $((1 + $RANDOM % 10)); git pull --rebase; git push; }
+      
+      # Exit with error if doit step failed
+      - name: "Check for errors: ${{ steps.doit.outcome }} and ${{ steps.commit.outcome }}"
+        if: ${{ steps.doit.outcome != 'success' }}
+        run: exit 1
