@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "jetstack/trust-manager",
+  "chat.repo.source": "https://charts.jetstack.io",
+  "version": "v0.6.0",
+  "app_version": "v0.6.0",
+  "description": "trust-manager is the easiest way to manage TLS trust bundles in Kubernetes and OpenShift clusters",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/jetstack",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/jetstack/trust-manager:v0.6.0"
+}
