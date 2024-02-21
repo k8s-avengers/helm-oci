@@ -98,7 +98,6 @@ class ChartRepo:
 		yield "id", self.repo_id
 		yield "source", self.source
 		yield "inventory", self.inventory
-		yield "charts", self.charts
 
 	def helm_update(self):
 		shell(["helm", "repo", "add", self.helm_repo_id, f"{self.source}"])

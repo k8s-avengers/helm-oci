@@ -24,7 +24,7 @@ def process(id, base_oci_ref):
 		log.info(f"to-oci running with base_oci_ref: {base_oci_ref}")
 
 		repos = Inventory(base_oci_ref)  # reads repos.yaml
-		log.info(pretty_repr(repos))
+		log.debug(pretty_repr(repos))
 
 		repo = repos.charts[id]
 		log.info(f"Processing repo '{repo.repo_id}' at '{repo.source}'")
@@ -32,14 +32,15 @@ def process(id, base_oci_ref):
 
 		repo.helm_update()
 		repo.helm_get_chart_info()
-		
+
 		# So now's the time to process the chartversions, lets do it one by one first, then make it parallel later
 		chart_versions = repo.versions_to_process()
 		log.info(f"Processing {len(chart_versions)} chart versions")
-		log.info(pretty_repr(chart_versions))
-		
-		#for chart_version in chart_versions:
-			
+		log.debug(pretty_repr(chart_versions))
+
+		for chart_version in chart_versions:
+			log.info(f"Processing target '{chart_version.oci_target_version}'")
+			log.info(pretty_repr(chart_version))
 
 
 
