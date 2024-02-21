@@ -55,10 +55,11 @@ jobs:
           .venv/bin/pip install -r requirements.txt
 
       - name: Obtain info and template examples ${{matrix.id}}
-        id: info
+        id: doit
         env: ${{ matrix.env }}
         run: |
-          .venv/bin/python info/cli.py ${{ matrix.distro }}
+          export DEST="${{ matrix.id }}"
+          .venv/bin/python tooci/cli.py
 
       - name: Commit changes to the examples directory
         run: |
@@ -69,12 +70,6 @@ jobs:
           git commit -m "Update info for ${{ matrix.id }}" || true
           git push || true
 
-
-      - name: Actually process ${{matrix.id}}
-        id: magic
-        env: ${{ matrix.env }}
-        run: |
-          .venv/bin/python tooci/cli.py tooci
 
   release:
     needs: [ build ] # depend on the previous jobs...
