@@ -1,0 +1,16 @@
+hash: "0001" # These will be used to process Chart.yaml dependencies; bump when a registry change is needed (will re-process all charts in all repos)
+repositories:
+  
+  "kubernetes-sigs-cluster-api-operator":
+    source: "https://kubernetes-sigs.github.io/cluster-api-operator"
+  
+  "kubernetes-ingress-nginx":
+    source: "https://kubernetes.github.io/ingress-nginx"
+  
+  "grafana":
+    source: "https://grafana.github.io/helm-charts"
+    latest-only: true # only process the latest version of each chart in the repo; useful for large repos & during development
+  
+  "prometheus-community":
+    source: "https://prometheus-community.github.io/helm-charts"
+    latest-only: true # only process the latest version of each chart in the repo; useful for large repos & during development

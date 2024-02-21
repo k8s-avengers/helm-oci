@@ -91,7 +91,7 @@ def setup_logging(name: string) -> logging.Logger:
 		singleton_console = Console(color_system="standard", width=160, highlight=False)
 
 	logging.basicConfig(
-		level="DEBUG",
+		level="INFO",
 		# format="%(message)s",
 		datefmt="[%X]",
 		handlers=[RichHandler(rich_tracebacks=True, markup=True, console=singleton_console)]

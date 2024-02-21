@@ -14,11 +14,12 @@ jobs:
     runs-on: "ubuntu-latest" # ${{ matrix.arch.runner }}
     strategy:
       fail-fast: false # let other jobs try to complete if one fails
-      matrix:
+      matrix: # @TODO: this is stupid, we should be able to use the repos.yaml directly; use a prepare job to generate the matrix from repos.yaml into a GHA output with JSON in it
         include:
-          - { id: "cluster-api-operator", env: { HELM_SRC_REPO: "https://kubernetes-sigs.github.io/cluster-api-operator" } }
-          - { id: "ingress-nginx", env: { HELM_SRC_REPO: "https://kubernetes.github.io/ingress-nginx" } }
-          #- { id: "prometheus-community", env: { HELM_SRC_REPO: "https://prometheus-community.github.io/helm-charts" } }
+          - { id: "kubernetes-sigs-cluster-api-operator" }
+          - { id: "kubernetes-ingress-nginx" }
+          - { id: "grafana" }
+          - { id: "prometheus-community" }
     env:
       BASE_OCI_REF: "ghcr.io/${{ github.repository_owner }}/"
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -47,21 +48,20 @@ jobs:
         uses: azure/setup-helm@v4.0.0 # v4 only does not work?
         with:
           version: "latest"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          #token: ${{ secrets.GITHUB_TOKEN }} # is already in the job's ENV
 
       - name: install pip deps
         run: |
           python3 -m venv .venv
           .venv/bin/pip install -r requirements.txt
 
-      - name: Obtain info and template examples ${{matrix.id}}
+      - name: "Do it: ${{matrix.id}}"
         id: doit
         env: ${{ matrix.env }}
         run: |
-          export DEST="${{ matrix.id }}"
-          .venv/bin/python tooci/cli.py tooci
+          .venv/bin/python tooci/cli.py tooci "${{ matrix.id }}"
 
-      - name: Commit changes to the examples directory
+      - name: Commit changes to the info directory
         run: |
           git config --global user.name "GHA workflow"
           git config --global user.email "workflow@github.com"
@@ -71,11 +71,11 @@ jobs:
           git push || true
 
 
-  release:
-    needs: [ build ] # depend on the previous jobs...
-    if: "${{ !cancelled() }}" # ... but run even if (some of) them failed, but not if job was cancelled
-    runs-on: ubuntu-latest
-    steps:
-      - name: List current dir
-        run: |
-          ls -lahtR
+  #release:
+  #  needs: [ build ] # depend on the previous jobs...
+  #  if: "${{ !cancelled() }}" # ... but run even if (some of) them failed, but not if job was cancelled
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - name: List current dir
+  #      run: |
+  #        ls -lahtR
