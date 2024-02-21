@@ -59,7 +59,7 @@ jobs:
         env: ${{ matrix.env }}
         run: |
           export DEST="${{ matrix.id }}"
-          .venv/bin/python tooci/cli.py
+          .venv/bin/python tooci/cli.py tooci
 
       - name: Commit changes to the examples directory
         run: |
