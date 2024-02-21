@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "prometheus-community/alertmanager-snmp-notifier",
+  "chat.repo.source": "https://prometheus-community.github.io/helm-charts",
+  "version": "0.1.1",
+  "app_version": "v1.4.0",
+  "description": "The SNMP Notifier handles alerts coming from Prometheus Alertmanager and relay them as SNMP traps.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/prometheus-community",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/prometheus-community/alertmanager-snmp-notifier:0.1.1"
+}
