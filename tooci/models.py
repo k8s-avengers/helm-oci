@@ -30,7 +30,7 @@ class HelmChartVersion:
 		self.description = chart_json["description"]
 
 		self.oci_target = f"{self.inv.base_oci_ref}/{self.repo.repo_id}/{self.chart.name_in_repo}"
-		self.oci_target_version = f"{self.inv.base_oci_ref}/{self.repo.repo_id}/{self.chart.name_in_repo}:{self.version}"
+		self.oci_target_version = f"{self.oci_target}:{self.version}"
 
 	def __rich_repr__(self):
 		yield "chart.name_target", self.chart.name_target
