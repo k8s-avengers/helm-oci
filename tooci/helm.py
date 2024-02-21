@@ -1,4 +1,3 @@
-import contextlib
 import glob
 import json
 import logging
@@ -53,20 +52,19 @@ class HelmChartVersion:
 		# If the info file exists, skip the processing
 		if os.path.exists(self.info_file):
 			log.info(f"Skipping processing of '{self.info_file}', info found/cache hit.")
-			return
+			return False # skipped
 
 		with tempfile.TemporaryDirectory() as tmp_dir_name:
 			log.info(f'created temporary directory: "{tmp_dir_name}"')
-			with contextlib.chdir(tmp_dir_name):  # Helm outputs the tgz to current directory and _that's it_
-				shell(["helm", "fetch", f"{self.chart.name_in_helm}", "--version", self.version])
-				tgz_files = glob.glob(f"{tmp_dir_name}/*.tgz")
-				if len(tgz_files) != 1:
-					raise Exception(f"Expected 1 tgz file, found {len(tgz_files)}: {tgz_files}")
+			shell(["helm", "fetch", f"{self.chart.name_in_helm}", "--version", self.version, "--destination", tmp_dir_name])
+			tgz_files = glob.glob(f"{tmp_dir_name}/*.tgz")
+			if len(tgz_files) != 1:
+				raise Exception(f"Expected 1 tgz file, found {len(tgz_files)}: {tgz_files}")
 
-				# push the tgz file to the OCI registry
-				self.filename = tgz_files[0]
-				log.info(f"Pushing '{self.filename}' to '{self.oci_target}'")
-				shell(["helm", "push", self.filename, f"oci://{self.oci_target}"])
+			# push the tgz file to the OCI registry
+			self.filename = tgz_files[0]
+			log.info(f"Pushing '{self.filename}' to '{self.oci_target}'")
+			shell(["helm", "push", self.filename, f"oci://{self.oci_target}"])
 
 		# Make sure self.info_dir exists, mkdir recursively
 		os.makedirs(self.info_dir, exist_ok=True)
@@ -84,6 +82,8 @@ class HelmChartVersion:
 			}, f, indent=2)
 
 		log.info(f"Wrote '{self.info_file}'")
+		
+		return True # processed
 
 	# self.fetch_chart_contents(tmp_dir_name)
 	# chart_temp_dir_name = f"{tmp_dir_name}/{self.chart.name_in_repo}"

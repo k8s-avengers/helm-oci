@@ -1,4 +1,6 @@
+import concurrent.futures
 import logging
+import multiprocessing
 import sys
 
 import click
@@ -38,10 +40,22 @@ def process(repo_id, base_oci_ref):
 		log.info(f"Processing {len(chart_versions)} chart versions")
 		log.debug(pretty_repr(chart_versions))
 
-		for chart_version in chart_versions:
-			log.info(f"Processing target '{chart_version.oci_target_version}'")
-			log.info(pretty_repr(chart_version))
-			chart_version.process()
+		# Use a parallel pool to process the chart versions, use double the number of cpu cores, but not more than 16
+		max_workers = 16 if ((multiprocessing.cpu_count() * 2) > 16) else (multiprocessing.cpu_count() * 2)
+		log.info(f"Using {max_workers} workers for parallel processing.")
+		with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+			def in_process(cv):
+				log.info(f"Processing target '{cv.oci_target_version}'")
+				log.info(pretty_repr(cv))
+				ret = cv.process()
+				log.info(f"Processed target '{cv.oci_target_version}' OK")
+				return ret
+
+			results = list(executor.map(in_process, chart_versions))
+
+		new_versions = len([x for x in results if x])
+		log.info(f"Finished processing {len(chart_versions)} chart versions; {new_versions} new versions were processed")
+
 	except:
 		log.exception("CLI failed")
 		sys.exit(1)
