@@ -59,7 +59,7 @@ class HelmChartVersion:
 
 		with tempfile.TemporaryDirectory() as tmp_dir_name:
 			log.info(f'created temporary directory: "{tmp_dir_name}"')
-			shell(["helm", "fetch", f"{self.chart.name_in_helm}", "--version", self.version, "--destination", tmp_dir_name])
+			shell(["timeout", "60", "helm", "fetch", f"{self.chart.name_in_helm}", "--version", self.version, "--destination", tmp_dir_name])
 			tgz_files = glob.glob(f"{tmp_dir_name}/*.tgz")
 			if len(tgz_files) != 1:
 				raise Exception(f"Expected 1 tgz file, found {len(tgz_files)}: {tgz_files}")
@@ -67,7 +67,7 @@ class HelmChartVersion:
 			# push the tgz file to the OCI registry
 			self.filename = tgz_files[0]
 			log.info(f"Pushing '{self.filename}' to '{self.oci_target}'")
-			shell(["helm", "push", self.filename, f"oci://{self.oci_target}"])
+			shell(["timeout", "60", "helm", "push", self.filename, f"oci://{self.oci_target}"])
 
 		# Make sure self.info_dir exists, mkdir recursively
 		os.makedirs(self.info_dir, exist_ok=True)
