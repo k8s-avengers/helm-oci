@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "prometheus-community/prometheus-consul-exporter",
+  "chat.repo.source": "https://prometheus-community.github.io/helm-charts",
+  "version": "0.2.0",
+  "app_version": "0.4.0",
+  "description": "A Helm chart for the Prometheus Consul Exporter",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/prometheus-community",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/prometheus-community/prometheus-consul-exporter:0.2.0"
+}

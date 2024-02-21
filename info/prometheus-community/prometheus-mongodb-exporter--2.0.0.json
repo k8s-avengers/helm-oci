@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "prometheus-community/prometheus-mongodb-exporter",
+  "chat.repo.source": "https://prometheus-community.github.io/helm-charts",
+  "version": "2.0.0",
+  "app_version": "v0.7.0",
+  "description": "A Prometheus exporter for MongoDB metrics",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/prometheus-community",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/prometheus-community/prometheus-mongodb-exporter:2.0.0"
+}
