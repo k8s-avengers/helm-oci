@@ -8,6 +8,7 @@ from urllib.parse import ParseResult
 from urllib.parse import urlparse
 
 import yaml
+from rich.pretty import pretty_repr
 
 from utils import shell
 from utils import shell_passthrough
@@ -52,7 +53,9 @@ class HelmChartVersion:
 		# If the info file exists, skip the processing
 		if os.path.exists(self.info_file):
 			log.info(f"Skipping processing of '{self.info_file}', info found/cache hit.")
-			return False # skipped
+			return False  # skipped
+
+		log.info(pretty_repr(self))
 
 		with tempfile.TemporaryDirectory() as tmp_dir_name:
 			log.info(f'created temporary directory: "{tmp_dir_name}"')
@@ -82,8 +85,8 @@ class HelmChartVersion:
 			}, f, indent=2)
 
 		log.info(f"Wrote '{self.info_file}'")
-		
-		return True # processed
+
+		return True  # processed
 
 	# self.fetch_chart_contents(tmp_dir_name)
 	# chart_temp_dir_name = f"{tmp_dir_name}/{self.chart.name_in_repo}"

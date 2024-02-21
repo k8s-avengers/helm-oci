@@ -7,6 +7,7 @@ import sys
 import click
 from rich.pretty import pretty_repr
 
+import helm
 import utils
 from helm import Inventory
 from utils import setup_logging
@@ -45,7 +46,7 @@ def process(repo_id, base_oci_ref):
 		repo.helm_get_chart_info()
 
 		# So now's the time to process the chartversions, lets do it one by one first, then make it parallel later
-		chart_versions = repo.versions_to_process()
+		chart_versions: list[helm.HelmChartVersion] = repo.versions_to_process()
 		log.info(f"Processing {len(chart_versions)} chart versions")
 		log.debug(pretty_repr(chart_versions))
 
@@ -53,9 +54,8 @@ def process(repo_id, base_oci_ref):
 		max_workers = 16 if ((multiprocessing.cpu_count() * 2) > 16) else (multiprocessing.cpu_count() * 2)
 		log.info(f"Using {max_workers} workers for parallel processing.")
 		with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-			def in_process(cv):
+			def in_process(cv: helm.HelmChartVersion):
 				log.info(f"Processing target '{cv.oci_target_version}'")
-				log.info(pretty_repr(cv))
 				ret = cv.process()
 				log.info(f"Processed target '{cv.oci_target_version}' OK")
 				return ret
