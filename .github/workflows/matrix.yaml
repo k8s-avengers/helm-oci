@@ -1,7 +1,8 @@
 name: matrix
 on:
-  # schedule:
-  #   - cron: '0 5 * * *' # every day at 5am UTC
+  schedule:
+    # every even hour, on minute 33
+    - cron: '33 0-23/2 * * *'
   workflow_dispatch:
 
 jobs:
