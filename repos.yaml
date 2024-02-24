@@ -26,7 +26,3 @@ repositories:
   "cilium":
     source: "https://helm.cilium.io"
   
-  "truecharts":
-    source: "https://charts.truecharts.org"
-    only-charts: # only process these charts in the repo; useful for large repos with thousands of charts you don't want
-      - "hedgedoc"
