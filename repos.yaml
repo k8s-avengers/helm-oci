@@ -15,7 +15,7 @@ repositories:
   
   "longhorn":
     source: "https://charts.longhorn.io"
-      
+  
   "jetstack": # cert-manager et al
     source: "https://charts.jetstack.io"
   
@@ -25,4 +25,7 @@ repositories:
   
   "cilium":
     source: "https://helm.cilium.io"
+  
+  "k8s-avengers":
+    source: "https://k8s-avengers.github.io/charts"
   
