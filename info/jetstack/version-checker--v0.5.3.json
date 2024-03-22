@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "jetstack/version-checker",
+  "chat.repo.source": "https://charts.jetstack.io",
+  "version": "v0.5.3",
+  "app_version": "v0.5.3",
+  "description": "A Helm chart for version-checker",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/jetstack",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/jetstack/version-checker:v0.5.3"
+}
