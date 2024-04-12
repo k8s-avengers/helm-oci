@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/rollout-operator",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "0.15.0",
+  "app_version": "v0.14.0",
+  "description": "Grafana rollout-operator",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/rollout-operator:0.15.0"
+}
