@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/grafana-sampling",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "0.1.1",
+  "app_version": "v0.40.2",
+  "description": "A Helm chart for a layered OTLP tail sampling and metrics generation pipeline.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/grafana-sampling:0.1.1"
+}
