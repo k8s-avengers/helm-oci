@@ -156,6 +156,7 @@ class ChartRepo:
 	chart_latest_versions: list[HelmChartVersion]
 	latest_only: bool
 	only_charts: list[str] | None
+	skip_chart_versions: dict[str, list[str]]
 
 	def __init__(self, inventory: "Inventory", repo_id: str, repo_yaml: any):
 		self.inventory = inventory
@@ -166,11 +167,16 @@ class ChartRepo:
 		self.charts = {}
 		self.chart_all_versions = []
 		self.chart_latest_versions = []
+		self.skip_chart_versions = {}
 
 		self.latest_only = bool(repo_yaml.get("latest-only", False))
 		self.only_charts = None
 		if "only-charts" in repo_yaml:
 			self.only_charts = [f"{self.helm_repo_id}/{chart}" for chart in repo_yaml["only-charts"]]
+
+		if "skip-chart-versions" in repo_yaml:
+			self.skip_chart_versions = repo_yaml["skip-chart-versions"]
+			log.warning(f"Found skip-chart-versions for repo '{self.repo_id}': '{self.skip_chart_versions}'")
 
 		if not self.source_url.scheme:
 			raise Exception(f"Invalid URL: {self.source} for repo id {self.repo_id}")
@@ -201,6 +207,9 @@ class ChartRepo:
 		charts_and_versions: dict[str, list] = {}
 		for chart_json in all_charts_versions:
 			chart_name_full = chart_json["name"]
+			chart_name_base = chart_name_full.split("/")[1]
+			log.info(f"Checking chart '{chart_name_full}' in repo '{self.repo_id}' (base name: '{chart_name_base}')")
+
 			if not chart_name_full.startswith(search_term):
 				log.debug(f"Skipping chart '{chart_name_full}' not in repo '{self.repo_id}'")
 				continue
@@ -208,6 +217,16 @@ class ChartRepo:
 			if self.only_charts and chart_name_full not in self.only_charts:
 				log.debug(f"Skipping chart '{chart_name_full}' not in only-charts for repo '{self.repo_id}'")
 				continue
+
+			if self.skip_chart_versions:
+				log.info(f"Checking skip-chart-versions for chart '{chart_name_full}' (base name: '{chart_name_base}')")
+				if chart_name_base in self.skip_chart_versions:
+					versions_to_skip = self.skip_chart_versions[chart_name_base]
+					if chart_json["version"] in versions_to_skip:
+						log.warning(f"Skipping chart '{chart_name_full}' version '{chart_json['version']}' as per skip-chart-versions for repo '{self.repo_id}'")
+						continue
+					else:
+						log.info(f"Version '{chart_json['version']}' not in skip-chart-versions for chart '{chart_name_full}'")
 
 			if chart_name_full not in charts_and_versions:
 				charts_and_versions[chart_name_full] = []

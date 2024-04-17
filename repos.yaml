@@ -25,6 +25,8 @@ repositories:
   
   "cilium":
     source: "https://helm.cilium.io"
+    skip-chart-versions:
+      "cilium": [ "1.16.0-dev" ] # broken upstream, it is listed in the repo index but not really available
   
   "k8s-avengers":
     source: "https://k8s-avengers.github.io/charts"
