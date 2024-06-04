@@ -33,3 +33,6 @@ repositories:
   
   "ollama-helm":
     source: "https://otwld.github.io/ollama-helm"
+  
+  "open-webui":
+    source: "https://helm.openwebui.com/"
