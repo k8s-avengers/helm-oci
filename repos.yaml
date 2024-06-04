@@ -31,3 +31,5 @@ repositories:
   "k8s-avengers":
     source: "https://k8s-avengers.github.io/charts"
   
+  "ollama-helm":
+    source: "https://otwld.github.io/ollama-helm"
