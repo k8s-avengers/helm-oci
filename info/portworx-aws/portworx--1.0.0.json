@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "portworx-aws/portworx",
+  "chat.repo.source": "https://raw.githubusercontent.com/portworx/aws-helm/master/stable/",
+  "version": "1.0.0",
+  "app_version": "2.6.1",
+  "description": "A Helm chart for installing Portworx on EKS through the AWS Marketplace.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/portworx-aws",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/portworx-aws/portworx:1.0.0"
+}
