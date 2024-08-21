@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "portworx-gh/px-license-server",
+  "chat.repo.source": "http://raw.githubusercontent.com/portworx/helm/master/stable/",
+  "version": "1.0.1",
+  "app_version": "1.0.1",
+  "description": "A Helm chart for install and configure PX-License-Server on Kubernetes and Openshift",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/portworx-gh",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/portworx-gh/px-license-server:1.0.1"
+}
