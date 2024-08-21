@@ -41,4 +41,11 @@ repositories:
     source: "http://raw.githubusercontent.com/portworx/helm/master/stable/"
     skip-chart-versions:
       "portworx-daemonSet": [ "all" ] # seems terribly broken, skip all versions
-    
+  
+  # Portworx "for AWS", for comparison purposes
+  "portworx-aws":
+    source: "https://raw.githubusercontent.com/portworx/aws-helm/master/stable/"
+  
+  # Portworx "for IBM cloud", whatever the hell that is
+  "portworx-ibm":
+    source: "https://raw.githubusercontent.com/portworx/ibm-helm/master/repo/stable/"
