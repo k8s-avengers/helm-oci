@@ -222,7 +222,7 @@ class ChartRepo:
 				log.info(f"Checking skip-chart-versions for chart '{chart_name_full}' (base name: '{chart_name_base}')")
 				if chart_name_base in self.skip_chart_versions:
 					versions_to_skip = self.skip_chart_versions[chart_name_base]
-					if chart_json["version"] in versions_to_skip:
+					if (chart_json["version"] in versions_to_skip) or ('all' in versions_to_skip):
 						log.warning(f"Skipping chart '{chart_name_full}' version '{chart_json['version']}' as per skip-chart-versions for repo '{self.repo_id}'")
 						continue
 					else:

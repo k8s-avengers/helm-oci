@@ -36,6 +36,9 @@ repositories:
   
   "open-webui":
     source: "https://helm.openwebui.com/"
-    
+  
   "portworx-gh": # Portworx Enterprise, published to GitHub; very confusing
     source: "http://raw.githubusercontent.com/portworx/helm/master/stable/"
+    skip-chart-versions:
+      "portworx-daemonSet": [ "all" ] # seems terribly broken, skip all versions
+    
