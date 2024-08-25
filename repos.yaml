@@ -1,8 +1,8 @@
 hash: "0001" # These will be used to process Chart.yaml dependencies; bump when a registry change is needed (will re-process all charts in all repos)
 repositories:
   
-  "kubernetes-sigs-cluster-api-operator":
-    source: "https://kubernetes-sigs.github.io/cluster-api-operator"
+  "kubernetes-sigs-cluster-api-operator": { source: "https://kubernetes-sigs.github.io/cluster-api-operator" }
+  "kubernetes-sigs-descheduler": { source: "https://kubernetes-sigs.github.io/descheduler/" }
   
   "kubernetes-ingress-nginx":
     source: "https://kubernetes.github.io/ingress-nginx"
@@ -40,6 +40,7 @@ repositories:
   "harbor": { source: "https://helm.goharbor.io" }
   
   "rook": { source: "https://charts.rook.io/release" }
+  
   
   # @TODO remove from here til end until point is proven
   "portworx-gh": # Portworx Enterprise, published to GitHub; very confusing
