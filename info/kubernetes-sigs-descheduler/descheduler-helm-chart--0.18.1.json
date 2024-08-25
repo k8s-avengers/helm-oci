@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "kubernetes-sigs-descheduler/descheduler-helm-chart",
+  "chat.repo.source": "https://kubernetes-sigs.github.io/descheduler/",
+  "version": "0.18.1",
+  "app_version": "0.18.0",
+  "description": "Descheduler for Kubernetes is used to rebalance clusters by evicting pods that can potentially be scheduled on better nodes. In the current implementation, descheduler does not schedule replacement of evicted pods but relies on the default scheduler for that.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/kubernetes-sigs-descheduler",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/kubernetes-sigs-descheduler/descheduler-helm-chart:0.18.1"
+}
