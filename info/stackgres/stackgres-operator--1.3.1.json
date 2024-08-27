@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "stackgres/stackgres-operator",
+  "chat.repo.source": "https://stackgres.io/downloads/stackgres-k8s/stackgres/helm/",
+  "version": "1.3.1",
+  "app_version": "1.3.1",
+  "description": "StackGres operator for kubernetes",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/stackgres",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/stackgres/stackgres-operator:1.3.1"
+}
