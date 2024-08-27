@@ -41,6 +41,8 @@ repositories:
   
   "rook": { source: "https://charts.rook.io/release" }
   
+  "stackgres": { source: "https://stackgres.io/downloads/stackgres-k8s/stackgres/helm/" }
+  
   
   # @TODO remove from here til end until point is proven
   "portworx-gh": # Portworx Enterprise, published to GitHub; very confusing
