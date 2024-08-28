@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "smallstep/step-certificates",
+  "chat.repo.source": "https://smallstep.github.io/helm-charts",
+  "version": "1.17.7",
+  "app_version": "0.17.6",
+  "description": "An online certificate authority and related tools for secure automated certificate management, so you can use TLS everywhere.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/smallstep",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/smallstep/step-certificates:1.17.7"
+}

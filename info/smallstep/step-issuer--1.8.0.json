@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "smallstep/step-issuer",
+  "chat.repo.source": "https://smallstep.github.io/helm-charts",
+  "version": "1.8.0",
+  "app_version": "0.8.0",
+  "description": "Step-issuer helm chart for kubernetes.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/smallstep",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/smallstep/step-issuer:1.8.0"
+}
