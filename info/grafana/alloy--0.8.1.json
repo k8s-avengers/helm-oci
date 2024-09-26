@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/alloy",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "0.8.1",
+  "app_version": "v1.4.1",
+  "description": "Grafana Alloy",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/alloy:0.8.1"
+}
