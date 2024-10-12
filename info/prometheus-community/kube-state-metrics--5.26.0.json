@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "prometheus-community/kube-state-metrics",
+  "chat.repo.source": "https://prometheus-community.github.io/helm-charts",
+  "version": "5.26.0",
+  "app_version": "2.13.0",
+  "description": "Install kube-state-metrics to generate and expose cluster-level metrics",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/prometheus-community",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/prometheus-community/kube-state-metrics:5.26.0"
+}
