@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "ollama-helm/ollama",
+  "chat.repo.source": "https://otwld.github.io/ollama-helm",
+  "version": "0.63.1",
+  "app_version": "0.3.14",
+  "description": "Get up and running with large language models locally.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/ollama-helm",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/ollama-helm/ollama:0.63.1"
+}
