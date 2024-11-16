@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "prometheus-community/prometheus",
+  "chat.repo.source": "https://prometheus-community.github.io/helm-charts",
+  "version": "25.30.1",
+  "app_version": "v2.55.1",
+  "description": "Prometheus is a monitoring system and time series database.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/prometheus-community",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/prometheus-community/prometheus:25.30.1"
+}
