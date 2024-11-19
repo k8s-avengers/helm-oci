@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/beyla",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "1.4.13",
+  "app_version": "1.8.8",
+  "description": "eBPF-based autoinstrumentation HTTP, HTTP2 and gRPC services, as well as network metrics.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/beyla:1.4.13"
+}
