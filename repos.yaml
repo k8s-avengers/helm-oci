@@ -36,7 +36,9 @@ repositories:
   
   "open-webui":
     source: "https://helm.openwebui.com/"
-  
+    skip-chart-versions:
+      "open-webui": [ "1.0.0" ] # broken upstream, it is listed in the repo index but not really available; reported at https://github.com/open-webui/helm-charts/issues/107
+
   "harbor": { source: "https://helm.goharbor.io" }
   
   "rook": { source: "https://charts.rook.io/release" }
