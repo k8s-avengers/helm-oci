@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "prometheus-community/prometheus-mysql-exporter",
+  "chat.repo.source": "https://prometheus-community.github.io/helm-charts",
+  "version": "2.8.0",
+  "app_version": "v0.16.0",
+  "description": "A Helm chart for prometheus mysql exporter with cloudsqlproxy",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/prometheus-community",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/prometheus-community/prometheus-mysql-exporter:2.8.0"
+}
