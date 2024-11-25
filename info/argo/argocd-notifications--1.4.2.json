@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "argo/argocd-notifications",
+  "chat.repo.source": "https://argoproj.github.io/argo-helm",
+  "version": "1.4.2",
+  "app_version": "1.1.1",
+  "description": "A Helm chart for ArgoCD notifications, an add-on to ArgoCD.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/argo",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/argo/argocd-notifications:1.4.2"
+}
