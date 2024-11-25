@@ -47,6 +47,8 @@ repositories:
   
   "smallstep": { source: "https://smallstep.github.io/helm-charts" } # step-ca et al
   
+  "kong-mesh": { source: "https://kong.github.io/kong-mesh-charts" }
+  
   
   # @TODO remove from here til end until point is proven
   "portworx-gh": # Portworx Enterprise, published to GitHub; very confusing
