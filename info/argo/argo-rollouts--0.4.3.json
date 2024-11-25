@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "argo/argo-rollouts",
+  "chat.repo.source": "https://argoproj.github.io/argo-helm",
+  "version": "0.4.3",
+  "app_version": "0.10.2",
+  "description": "A Helm chart for Argo Rollouts",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/argo",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/argo/argo-rollouts:0.4.3"
+}

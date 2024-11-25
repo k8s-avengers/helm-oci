@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "argo/argo-cd",
+  "chat.repo.source": "https://argoproj.github.io/argo-helm",
+  "version": "3.23.1",
+  "app_version": "2.1.3",
+  "description": "A Helm chart for ArgoCD, a declarative, GitOps continuous delivery tool for Kubernetes.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/argo",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/argo/argo-cd:3.23.1"
+}
