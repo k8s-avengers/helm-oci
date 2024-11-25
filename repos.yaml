@@ -49,6 +49,8 @@ repositories:
   
   "kong-mesh": { source: "https://kong.github.io/kong-mesh-charts" }
   
+  "argo": { source: "https://argoproj.github.io/argo-helm" }
+  
   
   # @TODO remove from here til end until point is proven
   "portworx-gh": # Portworx Enterprise, published to GitHub; very confusing
