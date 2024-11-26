@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "portworx-ibm/px-central",
+  "chat.repo.source": "https://raw.githubusercontent.com/portworx/ibm-helm/master/repo/stable/",
+  "version": "2.8.0",
+  "app_version": "2.8.0",
+  "description": "A Helm chart for installing PX-Central on Kubernetes and Openshift",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/portworx-ibm",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/portworx-ibm/px-central:2.8.0"
+}
