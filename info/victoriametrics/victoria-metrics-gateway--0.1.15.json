@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "victoriametrics/victoria-metrics-gateway",
+  "chat.repo.source": "https://victoriametrics.github.io/helm-charts",
+  "version": "0.1.15",
+  "app_version": "1.81.2",
+  "description": "Victoria Metrics Gateway - Auth & Rate-Limitting proxy for Victoria Metrics",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/victoriametrics",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/victoriametrics/victoria-metrics-gateway:0.1.15"
+}

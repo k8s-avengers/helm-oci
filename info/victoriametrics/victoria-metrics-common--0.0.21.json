@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "victoriametrics/victoria-metrics-common",
+  "chat.repo.source": "https://victoriametrics.github.io/helm-charts",
+  "version": "0.0.21",
+  "app_version": "",
+  "description": "Victoria Metrics Common - contains shared templates for all Victoria Metrics helm charts",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/victoriametrics",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/victoriametrics/victoria-metrics-common:0.0.21"
+}

@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "victoriametrics/victoria-metrics-k8s-stack",
+  "chat.repo.source": "https://victoriametrics.github.io/helm-charts",
+  "version": "0.7.11",
+  "app_version": "1.75.0",
+  "description": "Kubernetes monitoring on VictoriaMetrics stack. Includes VictoriaMetrics Operator, Grafana dashboards, ServiceScrapes and VMRules",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/victoriametrics",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/victoriametrics/victoria-metrics-k8s-stack:0.7.11"
+}

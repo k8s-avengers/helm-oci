@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "victoriametrics/victoria-metrics-anomaly",
+  "chat.repo.source": "https://victoriametrics.github.io/helm-charts",
+  "version": "1.6.7",
+  "app_version": "v1.18.4",
+  "description": "Victoria Metrics Anomaly Detection - a service that continuously scans Victoria Metrics time series and detects unexpected changes within data patterns in real-time.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/victoriametrics",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/victoriametrics/victoria-metrics-anomaly:1.6.7"
+}
