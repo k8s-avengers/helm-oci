@@ -51,6 +51,8 @@ repositories:
   
   "argo": { source: "https://argoproj.github.io/argo-helm" }
   
+  "victoriametrics": { source: "https://victoriametrics.github.io/helm-charts" }
+  
   
   # @TODO remove from here til end until point is proven
   "portworx-gh": # Portworx Enterprise, published to GitHub; very confusing
