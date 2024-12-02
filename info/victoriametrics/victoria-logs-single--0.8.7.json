@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "victoriametrics/victoria-logs-single",
+  "chat.repo.source": "https://victoriametrics.github.io/helm-charts",
+  "version": "0.8.7",
+  "app_version": "v1.0.0",
+  "description": "Victoria Logs Single version - high-performance, cost-effective and scalable logs storage",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/victoriametrics",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/victoriametrics/victoria-logs-single:0.8.7"
+}
