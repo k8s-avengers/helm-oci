@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/k8s-monitoring",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "1.6.15",
+  "app_version": "2.10.0",
+  "description": "A Helm chart for gathering, scraping, and forwarding Kubernetes telemetry data to a Grafana Stack.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/k8s-monitoring:1.6.15"
+}
