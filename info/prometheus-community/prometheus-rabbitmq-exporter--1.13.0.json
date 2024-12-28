@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "prometheus-community/prometheus-rabbitmq-exporter",
+  "chat.repo.source": "https://prometheus-community.github.io/helm-charts",
+  "version": "1.13.0",
+  "app_version": "v0.29.0",
+  "description": "Rabbitmq metrics exporter for prometheus",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/prometheus-community",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/prometheus-community/prometheus-rabbitmq-exporter:1.13.0"
+}
