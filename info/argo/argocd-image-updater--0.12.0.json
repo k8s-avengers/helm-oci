@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "argo/argocd-image-updater",
+  "chat.repo.source": "https://argoproj.github.io/argo-helm",
+  "version": "0.12.0",
+  "app_version": "v0.15.2",
+  "description": "A Helm chart for Argo CD Image Updater, a tool to automatically update the container images of Kubernetes workloads which are managed by Argo CD",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/argo",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/argo/argocd-image-updater:0.12.0"
+}
