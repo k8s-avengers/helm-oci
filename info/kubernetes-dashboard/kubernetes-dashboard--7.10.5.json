@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "kubernetes-dashboard/kubernetes-dashboard",
+  "chat.repo.source": "https://kubernetes.github.io/dashboard/",
+  "version": "7.10.5",
+  "app_version": "",
+  "description": "General-purpose web UI for Kubernetes clusters",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/kubernetes-dashboard",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/kubernetes-dashboard/kubernetes-dashboard:7.10.5"
+}
