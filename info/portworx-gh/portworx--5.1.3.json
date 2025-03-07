@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "portworx-gh/portworx",
+  "chat.repo.source": "http://raw.githubusercontent.com/portworx/helm/master/stable/",
+  "version": "5.1.3",
+  "app_version": "3.2.2",
+  "description": "A Helm chart for installing Portworx on Kubernetes.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/portworx-gh",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/portworx-gh/portworx:5.1.3"
+}
