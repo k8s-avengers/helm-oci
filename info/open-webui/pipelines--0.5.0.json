@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "open-webui/pipelines",
+  "chat.repo.source": "https://helm.openwebui.com/",
+  "version": "0.5.0",
+  "app_version": "alpha",
+  "description": "Pipelines: UI-Agnostic OpenAI API Plugin Framework",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/open-webui",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/open-webui/pipelines:0.5.0"
+}
