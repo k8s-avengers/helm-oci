@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "victoriametrics/victoria-metrics-single",
+  "chat.repo.source": "https://victoriametrics.github.io/helm-charts",
+  "version": "0.15.0",
+  "app_version": "v1.113.0",
+  "description": "Victoria Metrics Single version - high-performance, cost-effective and scalable TSDB, long-term remote storage for Prometheus",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/victoriametrics",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/victoriametrics/victoria-metrics-single:0.15.0"
+}
