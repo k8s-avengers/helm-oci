@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/grafana-operator",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "v5.17.1",
+  "app_version": "v5.17.1",
+  "description": "Helm chart for the Grafana Operator",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/grafana-operator:v5.17.1"
+}
