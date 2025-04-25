@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "jetstack/cert-manager-csi-driver-spiffe",
+  "chat.repo.source": "https://charts.jetstack.io",
+  "version": "v0.9.1",
+  "app_version": "v0.9.1",
+  "description": "csi-driver-spiffe is a Kubernetes CSI plugin which transparently delivers X.509 SPIFFE SVIDs to pods via cert-manager",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/jetstack",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/jetstack/cert-manager-csi-driver-spiffe:v0.9.1"
+}
