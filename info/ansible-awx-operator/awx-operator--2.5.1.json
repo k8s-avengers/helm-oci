@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "ansible-awx-operator/awx-operator",
+  "chat.repo.source": "https://ansible-community.github.io/awx-operator-helm/",
+  "version": "2.5.1",
+  "app_version": "2.5.1",
+  "description": "A Helm chart for the AWX Operator",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/ansible-awx-operator",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/ansible-awx-operator/awx-operator:2.5.1"
+}
