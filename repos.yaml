@@ -53,6 +53,8 @@ repositories:
   "argo": { source: "https://argoproj.github.io/argo-helm" }
   
   "victoriametrics": { source: "https://victoriametrics.github.io/helm-charts" }
+
+  "nvidia": { source: "https://helm.ngc.nvidia.com/nvidia" } # gpu-operator et al
   
   
   # @TODO remove from here til end until point is proven
