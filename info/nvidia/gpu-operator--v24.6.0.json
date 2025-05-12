@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "nvidia/gpu-operator",
+  "chat.repo.source": "https://helm.ngc.nvidia.com/nvidia",
+  "version": "v24.6.0",
+  "app_version": "v24.6.0",
+  "description": "NVIDIA GPU Operator creates/configures/manages GPUs atop Kubernetes",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/nvidia",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/nvidia/gpu-operator:v24.6.0"
+}
