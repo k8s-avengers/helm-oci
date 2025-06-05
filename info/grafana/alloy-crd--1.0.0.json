@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/alloy-crd",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "1.0.0",
+  "app_version": "1.0.0",
+  "description": "A Helm chart the Alloy CustomResourceDefinition, allowing for discrete deployments of the Alloy CRD independently of the Alloy Operator.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/alloy-crd:1.0.0"
+}
