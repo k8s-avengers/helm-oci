@@ -3,7 +3,9 @@ repositories:
   
   "kubernetes-sigs-cluster-api-operator": { source: "https://kubernetes-sigs.github.io/cluster-api-operator" }
   "kubernetes-sigs-descheduler": { source: "https://kubernetes-sigs.github.io/descheduler/" }
-  
+
+  "kubernetes-csi-smb": { source: "https://raw.githubusercontent.com/kubernetes-csi/csi-driver-smb/master/charts/" }
+
   "kubernetes-ingress-nginx":
     source: "https://kubernetes.github.io/ingress-nginx"
   
