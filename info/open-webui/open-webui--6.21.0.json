@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "open-webui/open-webui",
+  "chat.repo.source": "https://helm.openwebui.com/",
+  "version": "6.21.0",
+  "app_version": "0.6.15",
+  "description": "Open WebUI: A User-Friendly Web Interface for Chat Interactions \ud83d\udc4b",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/open-webui",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/open-webui/open-webui:6.21.0"
+}
