@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "victoriametrics/victoria-logs-cluster",
+  "chat.repo.source": "https://victoriametrics.github.io/helm-charts",
+  "version": "0.0.7",
+  "app_version": "v1.25.0",
+  "description": "The VictoriaLogs cluster chart packages everything required to run a horizontally scalable, highly available log-storage backend inside Kubernetes.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/victoriametrics",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/victoriametrics/victoria-logs-cluster:0.0.7"
+}
