@@ -52,7 +52,7 @@ jobs:
 
       - name: "Process ${{matrix.id}}"
         id: doit
-        timeout-minutes: 5 # safe to assume if it's not done in 5 mins, it hanged; next run will finish it
+        timeout-minutes: 110 # safe to assume if it's not done in 110 mins, it hanged; next run will finish it
         continue-on-error: true # let it progress so we can commit the info directory
         run: |
           git pull || true # install deps is slow; repo might have changed
