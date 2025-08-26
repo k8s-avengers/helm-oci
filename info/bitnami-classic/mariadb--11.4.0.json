@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-classic/mariadb",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "11.4.0",
+  "app_version": "10.6.11",
+  "description": "MariaDB is an open source, community-developed SQL database server that is widely in use around the world due to its enterprise features, flexibility, and collaboration with leading tech firms.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-classic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-classic/mariadb:11.4.0"
+}
