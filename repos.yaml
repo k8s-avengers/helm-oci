@@ -62,6 +62,17 @@ repositories:
 
   "ansible-awx-operator": { source: "https://ansible-community.github.io/awx-operator-helm/" }
 
+  "bitnami-classic": # Bitnami is going away on 20250828; keep a copy for comparison purposes
+    source: "https://charts.bitnami.com/bitnami"
+    only-charts:
+      - "valkey"
+      - "redis"
+      - "postgresql"
+      - "mariadb"
+      - "minio"
+      - "ghost"
+      - "mlflow"
+
   # @TODO remove from here til end until point is proven
   "portworx-gh": # Portworx Enterprise, published to GitHub; very confusing
     source: "http://raw.githubusercontent.com/portworx/helm/master/stable/"
