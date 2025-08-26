@@ -176,7 +176,7 @@ class ChartRepo:
 
 		if "skip-chart-versions" in repo_yaml:
 			self.skip_chart_versions = repo_yaml["skip-chart-versions"]
-			log.warning(f"Found skip-chart-versions for repo '{self.repo_id}': '{self.skip_chart_versions}'")
+			log.debug(f"Found skip-chart-versions for repo '{self.repo_id}': '{self.skip_chart_versions}'")
 
 		if not self.source_url.scheme:
 			raise Exception(f"Invalid URL: {self.source} for repo id {self.repo_id}")
