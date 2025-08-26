@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-classic/mlflow",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "2.2.2",
+  "app_version": "2.18.0",
+  "description": "MLflow is an open-source platform designed to manage the end-to-end machine learning lifecycle. It allows you to track experiments, package code into reproducible runs, and share and deploy models.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-classic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-classic/mlflow:2.2.2"
+}
