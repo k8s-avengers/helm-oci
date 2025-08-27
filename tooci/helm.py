@@ -60,12 +60,25 @@ class HelmChartVersion:
 		with tempfile.TemporaryDirectory() as tmp_dir_name:
 			log.info(f'created temporary directory: "{tmp_dir_name}"')
 			shell(["timeout", "60", "helm", "fetch", f"{self.chart.name_in_helm}", "--version", self.version, "--destination", tmp_dir_name])
+
 			tgz_files = glob.glob(f"{tmp_dir_name}/*.tgz")
 			if len(tgz_files) != 1:
 				raise Exception(f"Expected 1 tgz file, found {len(tgz_files)}: {tgz_files}")
+			self.filename = tgz_files[0]
+
+			# process callbacks, if any; those should modify the tgz file in place, using tmp_dir_name as a working directory
+			if self.repo.processors:
+				for processor_str in self.repo.processors:
+					# each processor should be a method of this class
+					if not hasattr(self, processor_str):
+						raise Exception(f"Processor '{processor_str}' not found in HelmChartVersion class")
+					processor = getattr(self, processor_str)
+					if not callable(processor):
+						raise Exception(f"Processor '{processor_str}' is not callable in HelmChartVersion class")
+					log.info(f"Running processor '{processor_str}' for chart '{self.chart.name_in_helm}' version '{self.version}'")
+					processor(self.filename, tmp_dir_name)
 
 			# push the tgz file to the OCI registry
-			self.filename = tgz_files[0]
 			log.info(f"Pushing '{self.filename}' to '{self.oci_target}'")
 			shell(["timeout", "60", "helm", "push", self.filename, f"oci://{self.oci_target}"])
 
@@ -157,6 +170,7 @@ class ChartRepo:
 	latest_only: bool
 	only_charts: list[str] | None
 	skip_chart_versions: dict[str, list[str]]
+	processors: list[str] | None
 
 	def __init__(self, inventory: "Inventory", repo_id: str, repo_yaml: any):
 		self.inventory = inventory
@@ -168,6 +182,7 @@ class ChartRepo:
 		self.chart_all_versions = []
 		self.chart_latest_versions = []
 		self.skip_chart_versions = {}
+		self.processors = []
 
 		self.latest_only = bool(repo_yaml.get("latest-only", False))
 		self.only_charts = None
@@ -178,6 +193,10 @@ class ChartRepo:
 			self.skip_chart_versions = repo_yaml["skip-chart-versions"]
 			log.debug(f"Found skip-chart-versions for repo '{self.repo_id}': '{self.skip_chart_versions}'")
 
+		if "processors" in repo_yaml:
+			self.processors = repo_yaml["processors"]
+			log.debug(f"Found processors for repo '{self.repo_id}': '{self.processors}'")
+
 		if not self.source_url.scheme:
 			raise Exception(f"Invalid URL: {self.source} for repo id {self.repo_id}")
 
@@ -186,6 +205,8 @@ class ChartRepo:
 		yield "source", self.source
 		yield "latest_only", self.latest_only
 		yield "only_charts", self.only_charts
+		yield "skip_chart_versions", self.skip_chart_versions
+		yield "processors", self.processors
 		yield "inventory", self.inventory
 
 	def helm_update(self):
@@ -208,7 +229,7 @@ class ChartRepo:
 		for chart_json in all_charts_versions:
 			chart_name_full = chart_json["name"]
 			chart_name_base = chart_name_full.split("/")[1]
-			log.info(f"Checking chart '{chart_name_full}' in repo '{self.repo_id}' (base name: '{chart_name_base}')")
+			log.debug(f"Checking chart '{chart_name_full}' in repo '{self.repo_id}' (base name: '{chart_name_base}')")
 
 			if not chart_name_full.startswith(search_term):
 				log.debug(f"Skipping chart '{chart_name_full}' not in repo '{self.repo_id}'")
