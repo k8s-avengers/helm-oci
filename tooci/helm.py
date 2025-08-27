@@ -129,6 +129,66 @@ class HelmChartVersion:
 		log.info(f"Processing Chart.yaml: {chart_yaml}")
 		pass
 
+	def bitnami_legacy_process(self, chart_tgz_fullpath: str, tmp_dir_name: str):
+		log.info(f"Running bitnami_legacy_process on '{chart_tgz_fullpath}' vs tmp dir '{tmp_dir_name}' for chart '{self.chart.name_in_helm}' version '{self.version}'")
+		extracted_dir = self.extract_tgz(chart_tgz_fullpath, tmp_dir_name)
+
+		# Main bit of hackery; use gnu sed, as some old charts have not-really-YAML values.yaml files
+		values_yaml_files = glob.glob(f"{extracted_dir}/**/values.yaml", recursive=True)
+		if len(values_yaml_files) == 0:
+			raise Exception(f"No values.yaml files found in '{extracted_dir}'")
+		for values_yaml_file in values_yaml_files:
+			log.info(f"Processing values.yaml: '{values_yaml_file}'")
+			shell(["sed", "--in-place=.bkp.pre.bitnami.hack", "-e", "s|repository: bitnami/|repository: bitnamilegacy/|g", values_yaml_file])
+			shell(["sed", "--in-place", "-e", "s|allowInsecureImages: false|allowInsecureImages: true|g", values_yaml_file])
+			# diff the file vs the bkp; show colorized diff, ignore exit code
+			shell_passthrough(["diff", "-U", "1", "--color=always", f"{values_yaml_file}.bkp.pre.bitnami.hack", values_yaml_file], ignore_exit_code=True)
+			# remove the bkp file
+			os.remove(f"{values_yaml_file}.bkp.pre.bitnami.hack")
+
+		self.repack_tgz(extracted_dir, chart_tgz_fullpath)
+
+	def extract_tgz(self, chart_tgz_fullpath, tmp_dir_name):
+		# extract the tgz file to a directory named after the tgz file (without .tgz) in tmp_dir_name
+		if not chart_tgz_fullpath.endswith(".tgz"):
+			raise Exception(f"Expected .tgz file, got '{chart_tgz_fullpath}'")
+
+		# use tar to list each file (complete with path) in the tgz file
+		# shell_passthrough(["tar", "tzf", chart_tgz_fullpath])
+
+		base_name = os.path.basename(chart_tgz_fullpath)
+		dir_name = base_name[:-4]
+		extracted_dir = f"{tmp_dir_name}/{dir_name}"
+		os.makedirs(extracted_dir, exist_ok=False)
+		shell(["tar", "xzf", chart_tgz_fullpath, "-C", extracted_dir, "--strip-components=0"])
+		log.info(f"Extracted '{chart_tgz_fullpath}' to '{extracted_dir}'")
+
+		# shell_passthrough(["tree", extracted_dir])
+
+		# remove the tgz file
+		os.remove(chart_tgz_fullpath)
+		return extracted_dir
+
+	def repack_tgz(self, dir_to_pack: str, output_tgz_fullpath: str):
+		# create a tgz file from the contents of dir_to_pack, output to output_tgz_fullpath
+		if not output_tgz_fullpath.endswith(".tgz"):
+			raise Exception(f"Expected .tgz file, got '{output_tgz_fullpath}'")
+
+		# find the single directory name in dir_to_pack
+		entries = os.listdir(dir_to_pack)
+		if len(entries) != 1:
+			raise Exception(f"Expected single directory in '{dir_to_pack}', found {len(entries)}: {entries}")
+		target_dir = entries[0]
+		log.info(f"Repacking '{output_tgz_fullpath}' from '{target_dir}' in '{dir_to_pack}'")
+
+		# use tar to create the tgz file
+		shell(["tar", "czf", output_tgz_fullpath, "-C", dir_to_pack, target_dir])
+
+		log.info(f"Repacked '{dir_to_pack}' to '{output_tgz_fullpath}'")
+
+		# use tar to list each file (complete with path) in the tgz file
+		# shell_passthrough(["tar", "tzf", output_tgz_fullpath])
+
 
 class HelmChartInfo:
 	repo: "ChartRepo"
