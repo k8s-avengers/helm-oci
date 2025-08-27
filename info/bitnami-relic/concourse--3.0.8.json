@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/concourse",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "3.0.8",
+  "app_version": "7.11.0",
+  "description": "Concourse is an automation system written in Go. It is most commonly used for CI/CD, and is built to scale to any kind of automation pipeline, from simple to complex.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/concourse:3.0.8"
+}

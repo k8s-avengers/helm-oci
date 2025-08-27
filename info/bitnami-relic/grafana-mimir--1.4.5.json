@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/grafana-mimir",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "1.4.5",
+  "app_version": "2.15.1",
+  "description": "Grafana Mimir is an open source, horizontally scalable, highly available, multi-tenant, long-term storage for Prometheus.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/grafana-mimir:1.4.5"
+}

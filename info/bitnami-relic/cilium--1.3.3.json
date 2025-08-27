@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/cilium",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "1.3.3",
+  "app_version": "1.16.5",
+  "description": "Cilium is an eBPF-based networking, observability, and security for Linux container management platforms like Docker and Kubernetes.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/cilium:1.3.3"
+}

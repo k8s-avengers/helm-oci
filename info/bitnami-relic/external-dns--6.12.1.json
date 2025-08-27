@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/external-dns",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "6.12.1",
+  "app_version": "0.13.1",
+  "description": "ExternalDNS is a Kubernetes addon that configures public DNS servers with information about exposed Kubernetes services to make them discoverable.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/external-dns:6.12.1"
+}

@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/grafana-loki",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "4.7.5",
+  "app_version": "3.4.2",
+  "description": "Grafana Loki is a horizontally scalable, highly available, and multi-tenant log aggregation system. It provides real-time long tailing and full persistence to object storage.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/grafana-loki:4.7.5"
+}

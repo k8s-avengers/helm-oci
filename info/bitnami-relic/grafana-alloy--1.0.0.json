@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/grafana-alloy",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "1.0.0",
+  "app_version": "1.10.0",
+  "description": "Grafana Alloy is an open source OpenTelemetry Collector distribution with built-in Prometheus pipelines and support for metrics, logs, traces, and profiles.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/grafana-alloy:1.0.0"
+}

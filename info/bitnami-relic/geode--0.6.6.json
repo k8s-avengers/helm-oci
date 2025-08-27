@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/geode",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "0.6.6",
+  "app_version": "1.14.4",
+  "description": "Apache Geode is a data management platform that provides advanced capabilities for data-intensive applications.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/geode:0.6.6"
+}
