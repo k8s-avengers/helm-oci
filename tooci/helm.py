@@ -4,6 +4,7 @@ import logging
 import os
 import string
 import tempfile
+import time
 from urllib.parse import ParseResult
 from urllib.parse import urlparse
 
@@ -80,7 +81,19 @@ class HelmChartVersion:
 
 			# push the tgz file to the OCI registry
 			log.info(f"Pushing '{self.filename}' to '{self.oci_target}'")
-			shell(["timeout", "60", "helm", "push", self.filename, f"oci://{self.oci_target}"])
+			# retry pushes up to 3 times; sleep 10 seconds between retries
+			for attempt in range(1, 4):
+				try:
+					shell(["timeout", "60", "helm", "push", self.filename, f"oci://{self.oci_target}"])
+					break
+				except Exception as e:
+					log.warning(f"Attempt {attempt} to push '{self.filename}' to '{self.oci_target}' failed: {e}")
+					if attempt < 3:
+						log.info(f"Retrying in 10 seconds...")
+						time.sleep(10)
+					else:
+						log.error(f"Failed to push '{self.filename}' to '{self.oci_target}' after 3 attempts")
+						raise e
 
 		# Make sure self.info_dir exists, mkdir recursively
 		os.makedirs(self.info_dir, exist_ok=True)
