@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/kiam",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "1.7.4",
+  "app_version": "4.2.0",
+  "description": "kiam is a proxy that captures AWS Metadata API requests. It allows AWS IAM roles to be set for Kubernetes workloads.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/kiam:1.7.4"
+}

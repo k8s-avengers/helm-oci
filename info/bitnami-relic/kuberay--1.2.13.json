@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/kuberay",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "1.2.13",
+  "app_version": "1.1.1",
+  "description": "KubeRay is a Kubernetes operator for deploying and management of Ray applications on Kubernetes using CustomResourceDefinitions.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/kuberay:1.2.13"
+}

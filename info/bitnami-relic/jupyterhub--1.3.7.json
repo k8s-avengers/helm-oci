@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/jupyterhub",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "1.3.7",
+  "app_version": "1.5.0",
+  "description": "JupyterHub brings the power of notebooks to groups of users. It gives users access to computational environments and resources without burdening the users with installation and maintenance tasks.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/jupyterhub:1.3.7"
+}

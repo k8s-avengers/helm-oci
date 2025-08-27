@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/harbor",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "17.1.1",
+  "app_version": "2.8.3",
+  "description": "Harbor is an open source trusted cloud-native registry to store, sign, and scan content. It adds functionalities like security, identity, and management to the open source Docker distribution.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/harbor:17.1.1"
+}
