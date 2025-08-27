@@ -76,14 +76,6 @@ repositories:
   "bitnami-relic": # Hacked-at bitnami charts, so old versions work with bitnamilegacy/ repo; sets allowInsecureImages=true
     source: "https://charts.bitnami.com/bitnami"
     processors: [ "bitnami_legacy_process" ]
-    only-charts:
-      - "valkey"
-      - "redis"
-      - "postgresql"
-      - "mariadb"
-      - "minio"
-      - "ghost"
-      - "mlflow"
 
   # @TODO remove from here til end until point is proven
   "portworx-gh": # Portworx Enterprise, published to GitHub; very confusing
