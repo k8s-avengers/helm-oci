@@ -38,13 +38,13 @@ def shell(arg_list: list[string]):
 	return utf8_stdout
 
 
-def shell_passthrough(arg_list: list[string]):
+def shell_passthrough(arg_list: list[string], ignore_exit_code: bool = False):
 	# execute a shell command, passing the shell-escaped arg list; throw and exception if the exit code is not 0
 	log.info(f"shell: {arg_list}")
 
 	# run the process. let it inherit stdin/stdout/stderr
 	result = subprocess.run(arg_list)
-	if result.returncode != 0:
+	if (result.returncode != 0) and (not ignore_exit_code):
 		raise Exception(
 			f"shell command failed: {arg_list} with return code {result.returncode} ")
 	log.debug(f"shell: {arg_list} exitcode: {result.returncode}")
