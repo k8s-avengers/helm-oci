@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/postgresql",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "12.5.3",
+  "app_version": "15.3.0",
+  "description": "PostgreSQL (Postgres) is an open source object-relational database known for reliability and data integrity. ACID-compliant, it supports foreign keys, joins, views, triggers and stored procedures.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/postgresql:12.5.3"
+}
