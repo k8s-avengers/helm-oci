@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/pytorch",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "3.2.2",
+  "app_version": "2.0.1",
+  "description": "PyTorch is a deep learning platform that accelerates the transition from research prototyping to production deployment. Bitnami image includes Torchvision for specific computer vision support.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/pytorch:3.2.2"
+}

@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/spark",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "9.2.13",
+  "app_version": "3.5.3",
+  "description": "Apache Spark is a high-performance engine for large-scale computing tasks, such as data processing, machine learning and real-time data streaming. It includes APIs for Java, Python, Scala and R.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/spark:9.2.13"
+}

@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/opensearch",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "2.0.8",
+  "app_version": "3.1.0",
+  "description": "OpenSearch is a scalable open-source solution for search, analytics, and observability. Features full-text queries, natural language processing, custom dictionaries, amongst others.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/opensearch:2.0.8"
+}

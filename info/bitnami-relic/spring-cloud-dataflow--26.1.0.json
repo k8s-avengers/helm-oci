@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/spring-cloud-dataflow",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "26.1.0",
+  "app_version": "2.11.1",
+  "description": "Spring Cloud Data Flow is a microservices-based toolkit for building streaming and batch data processing pipelines in Cloud Foundry and Kubernetes.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/spring-cloud-dataflow:26.1.0"
+}

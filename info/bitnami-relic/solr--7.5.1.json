@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/solr",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "7.5.1",
+  "app_version": "9.2.1",
+  "description": "Apache Solr is an extremely powerful, open source enterprise search platform built on Apache Lucene. It is highly reliable and flexible, scalable, and designed to add value very quickly after launch.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/solr:7.5.1"
+}

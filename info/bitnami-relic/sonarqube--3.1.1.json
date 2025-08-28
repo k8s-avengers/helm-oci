@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/sonarqube",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "3.1.1",
+  "app_version": "10.0.0",
+  "description": "SonarQube(TM) is an open source quality management platform that analyzes and measures code's technical quality. It enables developers to detect code issues, vulnerabilities, and bugs in early stages.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/sonarqube:3.1.1"
+}

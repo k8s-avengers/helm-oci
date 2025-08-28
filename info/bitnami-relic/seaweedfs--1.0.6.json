@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/seaweedfs",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "1.0.6",
+  "app_version": "3.71.0",
+  "description": "SeaweedFS is a simple and highly scalable distributed file system.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/seaweedfs:1.0.6"
+}

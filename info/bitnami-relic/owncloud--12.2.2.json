@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/owncloud",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "12.2.2",
+  "app_version": "10.10.0",
+  "description": "ownCloud is an open source content collaboration platform used to store and share files from any device. It grants data privacy, synchronization between devices, and file access control.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/owncloud:12.2.2"
+}

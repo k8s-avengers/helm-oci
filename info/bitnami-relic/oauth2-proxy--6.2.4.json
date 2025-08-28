@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/oauth2-proxy",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "6.2.4",
+  "app_version": "7.8.1",
+  "description": "A reverse proxy and static file server that provides authentication using Providers (Google, GitHub, and others) to validate accounts by email, domain or group.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/oauth2-proxy:6.2.4"
+}

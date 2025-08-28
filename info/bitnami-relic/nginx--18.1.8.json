@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/nginx",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "18.1.8",
+  "app_version": "1.27.0",
+  "description": "NGINX Open Source is a web server that can be also used as a reverse proxy, load balancer, and HTTP cache. Recommended for high-demanding sites due to its ability to provide faster content.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/nginx:18.1.8"
+}

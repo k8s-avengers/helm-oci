@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/wavefront-hpa-adapter",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "1.2.1",
+  "app_version": "0.9.8",
+  "description": "Wavefront HPA Adapter for Kubernetes is a Kubernetes Horizontal Pod Autoscaler adapter. It allows to scale your Kubernetes workloads based on Wavefront metrics.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/wavefront-hpa-adapter:1.2.1"
+}
