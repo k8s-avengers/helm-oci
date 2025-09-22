@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "victoriametrics/victoria-logs-cluster",
+  "chat.repo.source": "https://victoriametrics.github.io/helm-charts",
+  "version": "0.0.12",
+  "app_version": "v1.34.0",
+  "description": "The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database in Kubernetes. It optionally includes log collector for automatic collection of logs from Kubernetes containers and forwarding them to the deployed VictoriaLogs database.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/victoriametrics",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/victoriametrics/victoria-logs-cluster:0.0.12"
+}
