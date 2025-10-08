@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "kubernetes-autoscaler/cluster-autoscaler-chart",
+  "chat.repo.source": "https://kubernetes.github.io/autoscaler/",
+  "version": "1.0.1",
+  "app_version": "1.18.1",
+  "description": "Scales Kubernetes worker nodes within autoscaling groups.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/kubernetes-autoscaler",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/kubernetes-autoscaler/cluster-autoscaler-chart:1.0.1"
+}
