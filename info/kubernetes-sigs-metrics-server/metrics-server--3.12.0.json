@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "kubernetes-sigs-metrics-server/metrics-server",
+  "chat.repo.source": "https://kubernetes-sigs.github.io/metrics-server/",
+  "version": "3.12.0",
+  "app_version": "0.7.0",
+  "description": "Metrics Server is a scalable, efficient source of container resource metrics for Kubernetes built-in autoscaling pipelines.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/kubernetes-sigs-metrics-server",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/kubernetes-sigs-metrics-server/metrics-server:3.12.0"
+}
