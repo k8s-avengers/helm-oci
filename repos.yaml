@@ -3,14 +3,15 @@ repositories:
 
   "kubernetes-sigs-cluster-api-operator": { source: "https://kubernetes-sigs.github.io/cluster-api-operator" }
   "kubernetes-sigs-descheduler": { source: "https://kubernetes-sigs.github.io/descheduler/" }
+  "kubernetes-sigs-metrics-server": { source: "https://kubernetes-sigs.github.io/metrics-server/" }
 
   "kubernetes-csi-smb": { source: "https://raw.githubusercontent.com/kubernetes-csi/csi-driver-smb/master/charts/" }
 
-  "kubernetes-ingress-nginx":
-    source: "https://kubernetes.github.io/ingress-nginx"
+  "kubernetes-ingress-nginx": { source: "https://kubernetes.github.io/ingress-nginx" }
 
-  "kubernetes-dashboard":
-    source: "https://kubernetes.github.io/dashboard/"
+  "kubernetes-dashboard": { source: "https://kubernetes.github.io/dashboard/" }
+
+  "kubernetes-autoscaler": { source: "https://kubernetes.github.io/autoscaler/" }
 
   "grafana":
     source: "https://grafana.github.io/helm-charts"
