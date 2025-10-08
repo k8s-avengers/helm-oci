@@ -1,6 +1,6 @@
 hash: "0001" # These will be used to process Chart.yaml dependencies; bump when a registry change is needed (will re-process all charts in all repos)
 repositories:
-  
+
   "kubernetes-sigs-cluster-api-operator": { source: "https://kubernetes-sigs.github.io/cluster-api-operator" }
   "kubernetes-sigs-descheduler": { source: "https://kubernetes-sigs.github.io/descheduler/" }
 
@@ -8,34 +8,34 @@ repositories:
 
   "kubernetes-ingress-nginx":
     source: "https://kubernetes.github.io/ingress-nginx"
-  
+
   "kubernetes-dashboard":
     source: "https://kubernetes.github.io/dashboard/"
-  
+
   "grafana":
     source: "https://grafana.github.io/helm-charts"
-  
+
   "longhorn":
     source: "https://charts.longhorn.io"
-  
+
   "jetstack": # cert-manager et al
     source: "https://charts.jetstack.io"
-  
+
   "prometheus-community":
     source: "https://prometheus-community.github.io/helm-charts"
     #latest-only: true # only process the latest version of each chart in the repo; useful for large repos & during development
-  
+
   "cilium":
     source: "https://helm.cilium.io"
     skip-chart-versions:
       "cilium": [ "1.16.0-dev" ] # broken upstream, it is listed in the repo index but not really available
-  
+
   "k8s-avengers":
     source: "https://k8s-avengers.github.io/charts"
-  
+
   "ollama-helm":
     source: "https://otwld.github.io/ollama-helm"
-  
+
   "open-webui":
     source: "https://helm.openwebui.com/"
     skip-chart-versions:
@@ -43,17 +43,17 @@ repositories:
       "pipelines": [ "0.1.0" ] # broken upstream, it is listed in the repo index but not really available; reported at https://github.com/open-webui/helm-charts/issues/107
 
   "harbor": { source: "https://helm.goharbor.io" }
-  
+
   "rook": { source: "https://charts.rook.io/release" }
-  
+
   "stackgres": { source: "https://stackgres.io/downloads/stackgres-k8s/stackgres/helm/" }
-  
+
   "smallstep": { source: "https://smallstep.github.io/helm-charts" } # step-ca et al
-  
+
   "kong-mesh": { source: "https://kong.github.io/kong-mesh-charts" }
-  
+
   "argo": { source: "https://argoproj.github.io/argo-helm" }
-  
+
   "victoriametrics": { source: "https://victoriametrics.github.io/helm-charts" }
 
   "nvidia":
@@ -82,11 +82,11 @@ repositories:
     source: "http://raw.githubusercontent.com/portworx/helm/master/stable/"
     skip-chart-versions:
       "portworx-daemonSet": [ "all" ] # seems terribly broken, skip all versions
-  
+
   # Portworx "for AWS", for comparison purposes
   "portworx-aws":
     source: "https://raw.githubusercontent.com/portworx/aws-helm/master/stable/"
-  
+
   # Portworx "for IBM cloud", whatever the hell that is
   "portworx-ibm":
     source: "https://raw.githubusercontent.com/portworx/ibm-helm/master/repo/stable/"
