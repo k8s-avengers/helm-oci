@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "victoriametrics/victoria-metrics-operator",
+  "chat.repo.source": "https://victoriametrics.github.io/helm-charts",
+  "version": "0.55.1",
+  "app_version": "v0.64.0",
+  "description": "VictoriaMetrics Operator",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/victoriametrics",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/victoriametrics/victoria-metrics-operator:0.55.1"
+}
