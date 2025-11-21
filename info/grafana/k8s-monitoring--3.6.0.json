@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/k8s-monitoring",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "3.6.0",
+  "app_version": "3.6.0",
+  "description": "Capture all telemetry data from your Kubernetes cluster.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/k8s-monitoring:3.6.0"
+}
