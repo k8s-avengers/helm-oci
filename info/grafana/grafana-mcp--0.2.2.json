@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/grafana-mcp",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "0.2.2",
+  "app_version": "0.7.9",
+  "description": "MCP server for Grafana.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/grafana-mcp:0.2.2"
+}
