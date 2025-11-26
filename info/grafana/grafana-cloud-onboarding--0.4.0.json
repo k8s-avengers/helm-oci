@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/grafana-cloud-onboarding",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "0.4.0",
+  "app_version": "1.16.0",
+  "description": "A Helm chart for Grafana Cloud Onboarding on Kubernetes",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/grafana-cloud-onboarding:0.4.0"
+}
