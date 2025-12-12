@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "prometheus-community/kube-prometheus-stack",
+  "chat.repo.source": "https://prometheus-community.github.io/helm-charts",
+  "version": "80.2.2",
+  "app_version": "v0.87.1",
+  "description": "kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/prometheus-community",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/prometheus-community/kube-prometheus-stack:80.2.2"
+}
