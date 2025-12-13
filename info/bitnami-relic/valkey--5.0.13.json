@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "bitnami-relic/valkey",
+  "chat.repo.source": "https://charts.bitnami.com/bitnami",
+  "version": "5.0.13",
+  "app_version": "9.0.1",
+  "description": "Valkey is an open source (BSD) high-performance key/value datastore that supports a variety workloads such as caching, message queues, and can act as a primary database.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/bitnami-relic/valkey:5.0.13"
+}
