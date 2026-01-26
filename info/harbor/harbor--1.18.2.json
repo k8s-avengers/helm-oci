@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "harbor/harbor",
+  "chat.repo.source": "https://helm.goharbor.io",
+  "version": "1.18.2",
+  "app_version": "2.14.2",
+  "description": "An open source trusted cloud native registry that stores, signs, and scans content",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/harbor",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/harbor/harbor:1.18.2"
+}
