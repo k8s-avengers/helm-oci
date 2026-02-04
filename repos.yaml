@@ -9,7 +9,7 @@ repositories:
 
   "kubernetes-ingress-nginx": { source: "https://kubernetes.github.io/ingress-nginx" }
 
-  "kubernetes-dashboard": { source: "https://kubernetes.github.io/dashboard/" }
+  "kubernetes-dashboard": { source: "https://kubernetes-retired.github.io/dashboard/" }
 
   "kubernetes-autoscaler": { source: "https://kubernetes.github.io/autoscaler/" }
 
