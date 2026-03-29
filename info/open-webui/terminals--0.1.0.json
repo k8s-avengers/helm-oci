@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "open-webui/terminals",
+  "chat.repo.source": "https://helm.openwebui.com/",
+  "version": "0.1.0",
+  "app_version": "0.1.0",
+  "description": "Open Terminal: Kubernetes operator and orchestrator for per-user terminal instances",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/open-webui",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/open-webui/terminals:0.1.0"
+}
