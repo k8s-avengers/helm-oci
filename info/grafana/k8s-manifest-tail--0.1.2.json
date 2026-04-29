@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/k8s-manifest-tail",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "0.1.2",
+  "app_version": "0.1.1",
+  "description": "Fetches and monitors Kubernetes manifests from a running cluster",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/k8s-manifest-tail:0.1.2"
+}
