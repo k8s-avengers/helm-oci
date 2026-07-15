@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/k8s-injection-controller",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "0.2.1",
+  "app_version": "0.2.0",
+  "description": "Kubernetes admission controller for Grafana Beyla SDK auto-instrumentation.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/k8s-injection-controller:0.2.1"
+}
