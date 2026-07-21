@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "grafana/pyroscope",
+  "chat.repo.source": "https://grafana.github.io/helm-charts",
+  "version": "2.1.2",
+  "app_version": "2.1.1",
+  "description": "A horizontally scalable, highly available, multi-tenant continuous profiling database.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/grafana",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/grafana/pyroscope:2.1.2"
+}
