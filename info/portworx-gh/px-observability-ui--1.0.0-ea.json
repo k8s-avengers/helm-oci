@@ -1,0 +1,9 @@
+{
+  "chart.name_target": "portworx-gh/px-observability-ui",
+  "chat.repo.source": "http://raw.githubusercontent.com/portworx/helm/master/stable/",
+  "version": "1.0.0-ea",
+  "app_version": "1.0.0-ea",
+  "description": "An in-cluster observability, manageability and supportability UI for your Portworx Cluster.",
+  "oci_target": "ghcr.io/k8s-avengers/helm-oci/portworx-gh",
+  "oci_target_version": "ghcr.io/k8s-avengers/helm-oci/portworx-gh/px-observability-ui:1.0.0-ea"
+}
